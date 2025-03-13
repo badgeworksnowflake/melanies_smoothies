@@ -12,11 +12,7 @@ helpful_links = [
     "https://github.com/Snowflake-Labs/snowflake-demo-streamlit",
     "https://docs.snowflake.com/en/release-notes/streamlit-in-snowflake"
 ]
-ingredients_list = st.multiselect(
-    "Choose up to 5 ingredients:"
-    , my_dataframe
-    , max_selections = 5
-    )
+
 # Write directly to the app
 st.title(":cup_with_straw: Customize Your Smoothie :cup_with_straw:")
 st.write(
@@ -26,6 +22,11 @@ st.write(
 )
 name_on_order = st.text_input('Name on Smoothie: ')
 st.write('The name on your Smootheir will be:',name_on_order)
+ingredients_list = st.multiselect(
+    "Choose up to 5 ingredients:"
+    , my_dataframe
+    , max_selections = 5
+    )
 if ingredients_list:
     ingredients_string = ''
 
